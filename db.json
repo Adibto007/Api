@@ -1,10 +1,1 @@
-{
-    "books": [
-        {
-            "id": 1,
-            "nombre": "Cien años de soledad",
-            "autor": "Gabo",
-            "publicationYear": 1985
-        }
-    ]
-}
+{"books":[{"id":1,"nombre":"Cien años de soledad","autor":"Gabo","publicationYear":1985},{"id":2,"nombre":"wigetta","autor":"willy","publicationYear":2002},{"id":3,"nombre":"Mitos y leyendas","autor":"don pablo","publicationYear":"2002"}]}

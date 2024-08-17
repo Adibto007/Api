@@ -1,1 +1,26 @@
-DELETE  http://localhost:3000/librosD/2 HTTP/1.1
+#Metodo get para obtener todos los valores
+#GET  http://localhost:3000/libros HTTP/1.1
+
+#Metodo get para tomar valor especifico
+#GET http://localhost:3000/libros/1 HTTP/1.1
+
+#Metodo post para crear un usuario nuevo
+# POST http://localhost:3000/crear HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "nombre": "Mitos y leyendas",
+#     "autor": "don pablo",
+#     "publicationYear": 2002
+# }
+
+#Metodo put para editar datos de de person en especifico
+# PUT http://localhost:3000/editar/2 HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "autor": "pepe"
+# }
+
+#Metodo delete para eliminar daro en especifico
+DELETE  http://localhost:3000/eliminar/4 HTTP/1.1

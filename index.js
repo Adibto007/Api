@@ -1,13 +1,15 @@
 import express from 'express';
 import fs from 'fs';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors()); 
 
-app.get("/",(req, res) => {
+app.get("/", (req, res) => {
     res.send('Hello, s!');
-})
+});
 
 const readData = () => {
     try{
@@ -42,20 +44,21 @@ app.get("/libros/:id",(req, res) => {
 })
 
 //post
-app.post("/crear",(req, res) => {
+app.post("/crear", (req, res) => {
     const data = readData();
     const body = req.body;
     const newLibro = {
         id: data.books.length + 1,
         ...body,
-    }
+    };
     data.books.push(newLibro);
     writeData(data);
     res.json(newLibro);
-})
+});
+
 
 //PUT
-app.put("/librosE/:id",(req, res) => {
+app.put("/editar/:id",(req, res) => {
     const data = readData();
     const id = parseInt(req.params.id)
     const body = req.body;
@@ -68,7 +71,7 @@ app.put("/librosE/:id",(req, res) => {
 
 
 //DELETE
-app.delete("/librosD/:id",(req, res) => {
+app.delete("/eliminar/:id",(req, res) => {
     const data = readData();
     const id = parseInt(req.params.id)
     const index = data.books.findIndex((book) => book.id === id)
